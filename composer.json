@@ -16,7 +16,7 @@
 			"SanSIS\\Core\\ReportBundle" : ""
 		}
 	},
-	"target-dir" : "SanSIS/Core/ReportBundle",
+	"target-dir" : "",
 	"extra" : {
 		"branch-alias" : {
 			"dev-master" : "1.0-dev"
