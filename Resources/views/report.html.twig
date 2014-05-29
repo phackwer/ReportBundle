@@ -1,0 +1,74 @@
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('bundles/Ibramcorereport/js/report.js') }}"></script>
+{% endblock %}
+
+{% extends "IbramSgpCoopIntBundle::base.html.twig" %}
+
+{% block body %}
+    {% for itemReport in report %}
+        {% if itemReport.CO_SGP_RELATORIO is not empty %}
+            <input type="hidden" id="j_{{ itemReport.CO_SGP_RELATORIO }}" value="{{ itemReport | json_encode }}">
+        {% endif %}
+    {% endfor %}
+    <strong class="title">Relatório</strong>
+    <div class="box_borda">
+        <div class="padding">
+            <div class="form">
+                <ul class="row">
+
+                    <li class="span12">
+                        {% if report|length > 1 %}
+                        <label class="span2">Relatorios:</label>
+                        <select class="span3" id="j_selectReport">
+                            {% for r in report %}
+                                <option value="{{ r.CO_SGP_RELATORIO }}">{{ r.DS_RELATORIO }}</option>
+                            {% endfor %}
+                        </select>
+                        {% else %}
+                            <br/><br/><br/>
+                            <h3 style="text-align: center;"><strong>Não existem relatórios para este perfil</strong></h3>
+                        {% endif %}
+                    <li>
+
+                </ul>
+                <ul class="row">
+                    <form id="j_form">
+                        <li class="span12 row-fluid" id="j_formReport" style="width:97%">
+                        <li>
+                    </form>
+                </ul>
+
+                <ul class="row" id="j_botoes">
+                    <li class="span12 row-fluid">
+                        <div class="botoes" style="margin-top: 30px;">
+                            <label class="span2">Tipo Impressão:</label>
+                            <select id="j_tipoImpressao">
+                                <option value="grid">Tabela</option>
+                                <option value="pdf">PDF</option>
+                                <option value="xls">Excel</option>
+                                <option value="html">HTML</option>
+                            </select>
+
+                            <a class="btn btn-primary" id="j_pesquisar">Pesquisar</a>
+                            <a class="btn btn-primary" id="j_limpar">Limpar</a>
+                        </div>
+                    </li>
+                </ul>
+
+                <ul class="row">
+                    <li id="j_reportGrid" class="span12 row-fluid">
+                        <div class="box">
+                            <table id="j_grid"></table>
+                            <div id="pager"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="box">
+
+        </div>
+
+    </div>
+
+{% endblock %}

@@ -1,3 +1,33 @@
-san_sis_core_report_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: SanSISCoreReportBundle:Default:index }
+Ibram_report:
+    pattern:  /report/
+    defaults: { _controller: IbramCoreReportBundle:Report:report }
+
+Ibram_report_get_output_template:
+    pattern:  /getOutputTemplate/{seqReport}
+    defaults: { _controller: IbramCoreReportBundle:Report:getOutputTemplate }
+    options:
+            expose: true
+
+Ibram_report_get_report_grid:
+    pattern:  /reportGrid/{seqReport}
+    defaults: { _controller: IbramCoreReportBundle:Report:reportGrid }
+    options:
+            expose: true
+
+Ibram_report_get_report_pdf:
+    pattern:  /reportPdf/{seqReport}
+    defaults: { _controller: IbramCoreReportBundle:Report:getReportPdf }
+    options:
+            expose: true
+
+Ibram_report_get_report_html:
+    pattern:  /reportHtml/{seqReport}
+    defaults: { _controller: IbramCoreReportBundle:Report:getReportHtml }
+    options:
+            expose: true
+
+Ibram_report_get_report_xls:
+    pattern:  /reportXls/{seqReport}
+    defaults: { _controller: IbramCoreReportBundle:Report:getReportXls }
+    options:
+            expose: true

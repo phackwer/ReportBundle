@@ -1,0 +1,22 @@
+<table>
+    {% if result %}
+        <tr>
+            {% for colName in colNames %}
+                <td><b>{{ colName }}</b></td>
+            {% endfor %}
+        </tr>
+        {% for r in result %}
+            <tr>
+                {% for value in r %}
+                    <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    {% else %}
+        <tr>
+            <td>
+                Nenhum resultado encontrado.
+            </td>
+        </tr>
+    {% endif %}
+</table>

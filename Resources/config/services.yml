@@ -1,7 +1,7 @@
 parameters:
-#    san_sis_core_report.example.class: SanSIS\Core\ReportBundle\Example
+    Ibram_report.reportService.class: Ibram\Core\ReportBundle\Service\ReportService
 
 services:
-#    san_sis_core_report.example:
-#        class: %san_sis_core_report.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    Ibram_report.reportService:
+        class: %Ibram_report.reportService.class%
+        arguments: ["@doctrine.orm.entity_manager"]

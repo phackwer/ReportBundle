@@ -1,6 +1,6 @@
 <?php
 
-namespace SanSIS\Core\ReportBundle\DependencyInjection;
+namespace Ibram\Core\ReportBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -18,7 +18,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('san_sis_core_report');
+        $rootNode = $treeBuilder->root('Ibram_core_report');
 
         // Here you should define the parameters that are allowed to
         // configure your bundle. See the documentation linked above for
