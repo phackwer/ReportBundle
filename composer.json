@@ -1,0 +1,25 @@
+{
+	"name" : "sansis/reportbundle",
+	"description" : "SanSIS Report Bundle for Symfony development",
+	"type" : "symfony-bundle",
+	"authors" : [{
+			"name" : "Pablo Santiago Sanchez",
+			"email" : "phackwer@gmail.com"
+		}
+	],
+	"keywords" : [
+		"report bundle symfony development"
+	],
+	"license" : "BSD",
+	"autoload" : {
+		"psr-0" : {
+			"SanSIS\\Core\\ReportBundle" : ""
+		}
+	},
+	"target-dir" : "SanSIS/Core/ReportBundle",
+	"extra" : {
+		"branch-alias" : {
+			"dev-master" : "1.0-dev"
+		}
+	}
+}
