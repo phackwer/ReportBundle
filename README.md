@@ -40,5 +40,5 @@ composer.json:
 ```yml
 san_sis_core_report:
     resource: "@SanSISCoreReportBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /report
 ```

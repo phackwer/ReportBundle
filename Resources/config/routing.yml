@@ -1,33 +1,33 @@
-Ibram_report:
+SanSIS_report:
     pattern:  /report/
-    defaults: { _controller: IbramCoreReportBundle:Report:report }
+    defaults: { _controller: SanSISCoreReportBundle:Report:report }
 
-Ibram_report_get_output_template:
+SanSIS_report_get_output_template:
     pattern:  /getOutputTemplate/{seqReport}
-    defaults: { _controller: IbramCoreReportBundle:Report:getOutputTemplate }
+    defaults: { _controller: SanSISCoreReportBundle:Report:getOutputTemplate }
     options:
             expose: true
 
-Ibram_report_get_report_grid:
+SanSIS_report_get_report_grid:
     pattern:  /reportGrid/{seqReport}
-    defaults: { _controller: IbramCoreReportBundle:Report:reportGrid }
+    defaults: { _controller: SanSISCoreReportBundle:Report:reportGrid }
     options:
             expose: true
 
-Ibram_report_get_report_pdf:
+SanSIS_report_get_report_pdf:
     pattern:  /reportPdf/{seqReport}
-    defaults: { _controller: IbramCoreReportBundle:Report:getReportPdf }
+    defaults: { _controller: SanSISCoreReportBundle:Report:getReportPdf }
     options:
             expose: true
 
-Ibram_report_get_report_html:
+SanSIS_report_get_report_html:
     pattern:  /reportHtml/{seqReport}
-    defaults: { _controller: IbramCoreReportBundle:Report:getReportHtml }
+    defaults: { _controller: SanSISCoreReportBundle:Report:getReportHtml }
     options:
             expose: true
 
-Ibram_report_get_report_xls:
+SanSIS_report_get_report_xls:
     pattern:  /reportXls/{seqReport}
-    defaults: { _controller: IbramCoreReportBundle:Report:getReportXls }
+    defaults: { _controller: SanSISCoreReportBundle:Report:getReportXls }
     options:
             expose: true

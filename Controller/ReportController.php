@@ -1,16 +1,16 @@
 <?php
 
-namespace Ibram\Core\ReportBundle\Controller;
+namespace SanSIS\Core\ReportBundle\Controller;
 
-use Ibram\Core\BaseBundle\Controller\ControllerCrudAbstract;
-use Ibram\Core\ReportBundle\Service\ReportService;
-use Ibram\Sgp\CoreBundle\Entity\Relatorio;
+use SanSIS\Core\BaseBundle\Controller\ControllerCrudAbstract;
+use SanSIS\Core\ReportBundle\Service\ReportService;
+use SanSIS\Sgp\CoreBundle\Entity\Relatorio;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class ReportController
- * @package Ibram\Core\ReportBundle\Controller
+ * @package SanSIS\Core\ReportBundle\Controller
  */
 class ReportController extends ControllerCrudAbstract
 {
@@ -23,7 +23,7 @@ class ReportController extends ControllerCrudAbstract
         $this->checkAccess();
 
         /** @var ReportService $servReport */
-        $servReport = $this->get('Ibram_report.reportService');
+        $servReport = $this->get('SanSIS_report.reportService');
         $params['report'] = $servReport->getReports($_SESSION["CO_PERFIL"]);
 
         array_unshift($params['report'], array(
@@ -37,7 +37,7 @@ class ReportController extends ControllerCrudAbstract
 //            'dsMetodoRelatorio' => ''
         ));
 
-        return $this->render('IbramCoreReportBundle::report.html.twig', $params);
+        return $this->render('SanSISCoreReportBundle::report.html.twig', $params);
     }
 
     /**
@@ -47,7 +47,7 @@ class ReportController extends ControllerCrudAbstract
     public function getOutputTemplateAction($seqReport)
     {
         /** @var ReportService $servReport */
-        $servReport = $this->get('Ibram_report.reportService');
+        $servReport = $this->get('SanSIS_report.reportService');
         $entityReport = $servReport->getReportBySeq($seqReport);
 
         $serv = $this->get($entityReport->getDsClasseFormulario());
@@ -70,7 +70,7 @@ class ReportController extends ControllerCrudAbstract
         $rows = $request->query->get('rows', 100);
 
         /** @var ReportService $servReport */
-        $servReport = $this->get('Ibram_report.reportService');
+        $servReport = $this->get('SanSIS_report.reportService');
         $params = $servReport->formatGetToArray($request->query->get('dataForm'));
 
         /** @var Relatorio $entityReport */
@@ -179,7 +179,7 @@ class ReportController extends ControllerCrudAbstract
     private function getResultDinamic($seqReport)
     {
         /** @var ReportService $servReport */
-        $servReport = $this->get('Ibram_report.reportService');
+        $servReport = $this->get('SanSIS_report.reportService');
         /** @var Relatorio $entityReport */
         $entityReport = $servReport->getReportBySeq($seqReport);
 

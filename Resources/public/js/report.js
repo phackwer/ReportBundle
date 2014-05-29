@@ -14,7 +14,7 @@ function getOutputTemplate() {
 
     if ($('#j_selectReport').val() && $('#j_selectReport').val() != '') {
         $.ajax({
-            url: Routing.generate('Ibram_report_get_output_template', {seqReport: $('#j_selectReport').val()})
+            url: Routing.generate('SanSIS_report_get_output_template', {seqReport: $('#j_selectReport').val()})
         })
             .success(function (data) {
                 $('#j_formReport').html('');
@@ -62,14 +62,14 @@ function exibirGrid() {
 function criaGridDinamica(reportParams) {
     $("#loading").show();
     $.ajax({
-        url: Routing.generate('Ibram_report_get_report_grid', {seqReport: selectReport, dataForm: $('#j_form').serialize() })
+        url: Routing.generate('SanSIS_report_get_report_grid', {seqReport: selectReport, dataForm: $('#j_form').serialize() })
     })
         .success(function (data) {
             limpaGrid();
             $("#loading").hide();
 
             $("#j_grid").jqGrid({
-                url: Routing.generate('Ibram_report_get_report_grid', {seqReport: selectReport, dataForm: $('#j_form').serialize() }),
+                url: Routing.generate('SanSIS_report_get_report_grid', {seqReport: selectReport, dataForm: $('#j_form').serialize() }),
                 datatype: "json",
                 height: '254',
                 width: '1000px',
@@ -109,15 +109,15 @@ function limpaGrid() {
 }
 
 function exibirPdf() {
-    window.open(Routing.generate('Ibram_report_get_report_pdf', {seqReport: selectReport, dataForm: $('#j_form').serialize()  }));
+    window.open(Routing.generate('SanSIS_report_get_report_pdf', {seqReport: selectReport, dataForm: $('#j_form').serialize()  }));
 }
 
 function exibirHtml() {
-    window.open(Routing.generate('Ibram_report_get_report_html', {seqReport: selectReport, dataForm: $('#j_form').serialize()  }));
+    window.open(Routing.generate('SanSIS_report_get_report_html', {seqReport: selectReport, dataForm: $('#j_form').serialize()  }));
 }
 
 function exibirXls() {
-    window.open(Routing.generate('Ibram_report_get_report_xls', {seqReport: selectReport, dataForm: $('#j_form').serialize()  }));
+    window.open(Routing.generate('SanSIS_report_get_report_xls', {seqReport: selectReport, dataForm: $('#j_form').serialize()  }));
 }
 
 function limparFormulario() {

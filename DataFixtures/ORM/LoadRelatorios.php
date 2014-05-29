@@ -2,7 +2,7 @@
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
-use Ibram\Sgp\CoreBundle\Entity\Relatorio;
+use SanSIS\Sgp\CoreBundle\Entity\Relatorio;
 
 class LoadRelatorios implements FixtureInterface{
 
@@ -13,7 +13,7 @@ class LoadRelatorios implements FixtureInterface{
      */
     function load(ObjectManager $manager)
     {
-        $entityRelatorio = $manager->find('Ibram\Sgp\CoreBundle\Entity\Relatorio',1);
+        $entityRelatorio = $manager->find('SanSIS\Sgp\CoreBundle\Entity\Relatorio',1);
 
         if (empty($entityRelatorio)) {
             $entityRelatorio = new Relatorio();
@@ -21,11 +21,11 @@ class LoadRelatorios implements FixtureInterface{
         }
 
         $entityRelatorio->setDsRelatorio('Ajuda de Custo');
-        $entityRelatorio->setDsArquivoFormulario('IbramSgpMaisMedicosBundle:Report:ajudaDeCustoForm.html.twig');
-        $entityRelatorio->setDsClasseFormulario('Ibram_sgp_mais_medicos.ajudaDeCusto');
+        $entityRelatorio->setDsArquivoFormulario('SanSISSgpMaisMedicosBundle:Report:ajudaDeCustoForm.html.twig');
+        $entityRelatorio->setDsClasseFormulario('SanSIS_sgp_mais_medicos.ajudaDeCusto');
         $entityRelatorio->setDsMetodoFormulario('paramsAjudaDeCustoForm');
-        $entityRelatorio->setDsArquivoRelatorio('IbramCoreReportBundle::reportHtml.html.twig');
-        $entityRelatorio->setDsClasseRelatorio('Ibram_sgp_mais_medicos.ajudaDeCusto');
+        $entityRelatorio->setDsArquivoRelatorio('SanSISCoreReportBundle::reportHtml.html.twig');
+        $entityRelatorio->setDsClasseRelatorio('SanSIS_sgp_mais_medicos.ajudaDeCusto');
         $entityRelatorio->setDsMetodoRelatorio('ajudaDeCusto');
 
         $manager->persist($entityRelatorio);

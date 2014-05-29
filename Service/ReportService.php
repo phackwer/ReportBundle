@@ -1,14 +1,14 @@
 <?php
 
-namespace Ibram\Core\ReportBundle\Service;
+namespace SanSIS\Core\ReportBundle\Service;
 
 
-use Ibram\Core\BaseBundle\ServiceLayer\ServiceAbstract;
-use Ibram\Sgp\CoreBundle\Entity\Relatorio;
+use SanSIS\Core\BaseBundle\ServiceLayer\ServiceAbstract;
+use SanSIS\Sgp\CoreBundle\Entity\Relatorio;
 
 /**
  * Class ReportService
- * @package Ibram\Core\ReportBundle\Service
+ * @package SanSIS\Core\ReportBundle\Service
  */
 class ReportService extends ServiceAbstract
 {
@@ -19,7 +19,7 @@ class ReportService extends ServiceAbstract
      */
     public function getReports($perfil)
     {
-        $repositoryRelatorio = $this->entityManager->getRepository('Ibram\Sgp\CoreBundle\Entity\Relatorio');
+        $repositoryRelatorio = $this->entityManager->getRepository('SanSIS\Sgp\CoreBundle\Entity\Relatorio');
         $arrayRelatorios = $repositoryRelatorio->getListRelatorioByPerfil($perfil);
 
         return $arrayRelatorios;
@@ -34,7 +34,7 @@ class ReportService extends ServiceAbstract
     public function getReportBySeq($seqReport)
     {
 
-        $repositoryRelatorio = $this->entityManager->getRepository('Ibram\Sgp\CoreBundle\Entity\Relatorio');
+        $repositoryRelatorio = $this->entityManager->getRepository('SanSIS\Sgp\CoreBundle\Entity\Relatorio');
         $entityRelatorio = $repositoryRelatorio->findOneBy(array('coSgpRelatorio' => $seqReport));
 
         return $entityRelatorio;
