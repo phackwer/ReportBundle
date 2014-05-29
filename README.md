@@ -34,3 +34,11 @@ composer.json:
          //SanSIS Core Production Bundles
          new SanSIS\Core\ReportBundle\SanSISCoreReportBundle(),
 ```
+
+## Add to routing.yml
+
+```yml
+san_sis_core_report:
+    resource: "@SanSISCoreReportBundle/Resources/config/routing.yml"
+    prefix:   /
+```
